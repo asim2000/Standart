@@ -1,0 +1,80 @@
+﻿@model RegisterModel
+@section header{
+<partial name="_header"/>
+}
+
+ <div class="login-page">
+<div class="container d-flex align-items-center position-relative py-5">
+<div class="card shadow-sm w-100 rounded overflow-hidden bg-none">
+<div class="card-body p-0">
+<div class="row gx-0 align-items-stretch">
+<!-- Logo & Information Panel-->
+<div class="col-lg-6">
+<div class="info d-flex justify-content-center flex-column p-4 h-100">
+    <div class="py-5">
+    <h1 class="display-6 fw-bold">Dashboard</h1>
+    <p class="fw-light mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </div>
+</div>
+</div>
+<div class="col-lg-6 bg-white">
+<div class="d-flex align-items-center px-4 px-lg-5 h-100">
+    <form class="register-form py-5 w-100" enctype="multipart/form-data" method="post" action="/account/register">
+    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+    
+    <div class="input-material-group mb-3">
+        <input class="input-material" type="text" asp-for="@Model.FirstName">
+        <label class="label-material" asp-for="@Model.FirstName">First Name</label>
+    </div>
+    <span class="text-danger" asp-validation-for="@Model.FirstName"></span>
+
+    <div class="input-material-group mb-3">
+        <input class="input-material" type="text" asp-for="@Model.LastName">
+        <label class="label-material" asp-for="@Model.LastName">Last Name</label>
+    </div>
+    <span class="text-danger" asp-validation-for="@Model.LastName"></span>
+
+     <div class="input-material-group mb-3">
+        <input class="input-material" type="text" asp-for="@Model.UserName">
+        <label class="label-material" asp-for="@Model.UserName">UserName</label>
+    </div>
+    <span class="text-danger" asp-validation-for="@Model.UserName"></span>
+
+    <div class="input-material-group mb-3">
+        <input class="input-material" type="text" asp-for="@Model.Profession">
+        <label class="label-material" asp-for="@Model.Profession">Profession</label>
+    </div>
+            <span class="text-danger" asp-validation-for="@Model.Profession"></span>
+    <div class="input-material-group mb-3">
+        <input class="input-material" type="email" asp-for="@Model.Email" required >
+        <label class="label-material" asp-for="@Model.Email">Email Address</label>
+    </div> 
+    <span class="text-danger" asp-validation-for="@Model.Email"></span>4
+
+    <div class="input-material-group mb-3">
+        <input class="input-material" name="file" type="file" asp-for="@Model.Image">
+        <label class="label-material" asp-for="@Model.Image">Photo</label>
+    </div>
+    <span class="text-danger" asp-validation-for="@Model.Image"></span>
+
+    <div class="input-material-group mb-4">
+        <input class="input-material" type="password" asp-for="@Model.Password" required>
+        <label class="label-material" asp-for="@Model.Password">Password</label>
+    </div>
+    <span class="text-danger" asp-validation-for="@Model.Password"></span>
+
+    <div class="input-material-group mb-4">
+        <input class="input-material" type="password" asp-for="@Model.Repassword" required>
+        <label class="label-material" asp-for="@Model.Repassword">Repassword</label>
+    </div>
+    <span class="text-danger" asp-validation-for="@Model.Repassword"></span>
+
+    <button class="btn btn-primary mb-3" id="login" type="submit">Register</button><br><small class="text-gray-500">Already have an account?  </small><a class="text-sm text-paleBlue" href="/account/login">Login</a>
+    </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
